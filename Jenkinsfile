@@ -13,7 +13,7 @@ pipeline
     {
       steps {
          sh" kill -9 \$(lsof -i:3000) "
-         sh" JENKINS_NODE_COOKIE=dontKillMe nohup serve -s -l 3000 & "
+         sh" JENKINS_NODE_COOKIE=dontKillMe nohup serve -s /root/.jenkins/workspace/hok-front/build -l 3000 & "
       }
     }
   }
