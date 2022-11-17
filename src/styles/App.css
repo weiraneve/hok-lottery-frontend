@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("src/assets/images/all-hero.jpeg");
+    background-image: url("../assets/images/all-hero.jpeg");
     background-color: whitesmoke;
     background-position: center;
     background-repeat: no-repeat;
