@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './styles/Input.scss';
+import ResultTable from "./components/ResultTable";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function KeyInput() {
     const [keyWords, setKeyWords] = useState("");
-    const [heroes, setHeroes] = useState(null);
+    const [currentPick, setCurrentPick] = useState(null);
+    const [pickHistories, setPickHistories] = useState([]);
+    const inputRef = React.createRef()
 
     const onTextInput = (event) => {
         setKeyWords(event.target.value);
@@ -24,30 +27,35 @@ export default function KeyInput() {
         fetch(BASE_URL, options)
             .then(response => response.json())
             .then(response => {
-                setHeroes(response.data)
+                setCurrentPick(response.data)
+                setPickHistories(response.logs)
             })
             .catch(err => console.error(err));
     }
 
+    const onKeyUp = (event) => {
+        if (event.key === 'Enter') {
+            handleClick()
+        }
+    }
+
+    useEffect(() => {
+        inputRef.current.focus()
+    })
+
     return (
         <div className="input-container">
-            <input className="c-checkbox" type="checkbox" id="checkbox"/>
-            <div className="c-formContainer">
-                <form className="c-form" action="">
-                    <input className="c-form__input" placeholder="请输入密钥" type="text" onChange={onTextInput}
-                           required/>
-                    <label className="c-form__buttonLabel">
-                        <button className="c-form__button" type="button" onClick={handleClick}>生成英雄</button>
-                    </label>
-                    <label className="c-form__toggle" htmlFor="checkbox" data-title="点击开始抽取英雄组合"/>
-                </form>
+            <div className="keyword-container">
+                <input className="keyword-input" onChange={onTextInput} defaultValue={keyWords} ref={inputRef} onKeyUp={onKeyUp} />
+                <button className="confirm-button" onClick={handleClick}>生成英雄</button>
             </div>
-            {heroes && (
+            {currentPick && (
                 <div className="hint-container">
                     <div className="backdrop"></div>
-                    <p>{heroes}</p>
+                    <p>{currentPick}</p>
                 </div>
             )}
+            <ResultTable data={pickHistories} />
         </div>
     );
 }

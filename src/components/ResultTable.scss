@@ -1,0 +1,25 @@
+.table-container {
+  width: 100%;
+  background: white;
+  margin: 1rem 0 0;
+  border-radius: 1rem;
+  padding: 0.5rem;
+
+  .history-title {
+    font-size: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+  }
+
+  tr {
+    height: 2.75rem;
+  }
+
+  .table-divider {
+    border-top: 1px solid rgba(0,0,0,.1);
+  }
+}
