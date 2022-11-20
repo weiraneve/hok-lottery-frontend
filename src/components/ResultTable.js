@@ -2,7 +2,7 @@ import React from 'react'
 import './ResultTable.scss'
 
 const ResultTable = ({data}) => {
-    const formatDate = (time) => new Date(time).toLocaleDateString()
+    const formatDate = (time) => new Date(time).toLocaleString()
 
     return (
         !data || data.length <= 0 ? <></> : (
