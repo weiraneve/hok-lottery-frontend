@@ -1,8 +1,9 @@
 import React from 'react'
-import './ResultTable.scss'
+import '../styles/ResultTable.scss'
+import moment from 'moment'
 
 const ResultTable = ({data}) => {
-    const formatDate = (time) => new Date(time).toLocaleString()
+    const formatDate = (time) => moment(time).format('YYYY-MM-DD HH:mm:ss');
 
     return (
         !data || data.length <= 0 ? <></> : (
