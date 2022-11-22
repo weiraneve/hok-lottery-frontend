@@ -6,11 +6,7 @@ import {Route, Routes} from 'react-router-dom';
 export default function App() {
     return (
         <Routes>
-            <Route path='/' element={
-                <div className="selector-container">
-                    <KeyInput/>
-                </div>}
-            />
+            <Route path='/' element={<KeyInput/>}/>
         </Routes>
     );
 }

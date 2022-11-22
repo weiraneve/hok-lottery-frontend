@@ -44,18 +44,21 @@ export default function KeyInput() {
     })
 
     return (
-        <div className="input-container">
-            <div className="keyword-container">
-                <input className="keyword-input" onChange={onTextInput} defaultValue={keyWords} ref={inputRef} onKeyUp={onKeyUp} />
-                <button className="confirm-button" onClick={handleClick}>生成英雄</button>
-            </div>
-            {currentPick && (
-                <div className="hint-container">
-                    <div className="backdrop"></div>
-                    <p>{currentPick}</p>
+        <div className="selector-container">
+            <div className="input-container">
+                <div className="keyword-container">
+                    <input className="keyword-input" onChange={onTextInput} defaultValue={keyWords} ref={inputRef}
+                           onKeyUp={onKeyUp}/>
+                    <button className="confirm-button" onClick={handleClick}>生成英雄</button>
                 </div>
-            )}
-            <ResultTable data={pickHistories} />
+                {currentPick && (
+                    <div className="hint-container">
+                        <div className="backdrop"></div>
+                        <p>{currentPick}</p>
+                    </div>
+                )}
+                <ResultTable data={pickHistories}/>
+            </div>
         </div>
     );
 }
