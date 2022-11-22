@@ -1,12 +1,17 @@
 import React from 'react';
 import './styles/App.css';
-import KeyInput from "./Input";
+import KeyInput from './components/Input';
+import {Route, Routes} from 'react-router-dom';
 
 export default function App() {
     return (
-        <div className="selector-container">
-            <KeyInput />
-        </div>
+        <Routes>
+            <Route path='/' element={
+                <div className="selector-container">
+                    <KeyInput/>
+                </div>}
+            />
+        </Routes>
     );
 }
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import './styles/Input.scss';
-import ResultTable from "./components/ResultTable";
+import '../styles/Input.scss';
+import ResultTable from "./ResultTable";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
