@@ -9,87 +9,94 @@ $text-container-width: 80vw;
 
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  position: relative;
 }
 
 .hint-container {
-    position: relative;
-    border-radius: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  width: 100%;
+  margin: 1rem 0 0;
+  text-align: center;
+
+  .backdrop {
+    position: absolute;
     width: 100%;
-    margin: 1rem 0 0;
-    text-align: center;
+    height: 100%;
+    opacity: 0.6;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    left: 0;
+    z-index: -1;
+  }
 
-    .backdrop {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.6;
-        background-color: whitesmoke;
-        border-radius: 1rem;
-        left: 0;
-        z-index: -1;
-    }
-
-    p {
-        font-size: 2rem;
-        color: $text-blue;
-        font-weight: 600;
-        z-index: 1;
-        text-shadow: 1px 1px 2px black, 0 0 1em #f9f9f9, 0 0 0.2em #929092;
-    }
+  p {
+    font-size: 2rem;
+    color: $text-blue;
+    font-weight: 600;
+    z-index: 1;
+    text-shadow: 1px 1px 2px black, 0 0 1em #f9f9f9, 0 0 0.2em #929092;
+  }
 }
 
 .keyword-container {
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    background: white;
-    padding: 0.5rem;
-    border-radius: 2.75rem;
-    box-shadow: 0 0.125em 0.3125em rgb(0 0 0 / 30%);
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 2.75rem;
+  box-shadow: 0 0.125em 0.3125em rgb(0 0 0 / 30%);
 
-    .keyword-input {
-        width: 70%;
-        border: 0;
-        outline: 0;
-        color: $text-blue;
-        font-size: 1.75rem;
-        padding-left: 0.75rem;
-        background: transparent;
-    }
+  .keyword-input {
+    width: 70%;
+    border: 0;
+    outline: 0;
+    color: $text-blue;
+    font-size: 1.75rem;
+    padding-left: 0.75rem;
+    background: transparent;
+  }
 
-    .confirm-button {
-        border: 0;
-        outline: 0;
-        border-radius: 5rem;
-        height: 100%;
-        width: 5rem;
-        background-color: $text-blue;
-        color: white;
-    }
+  .confirm-button {
+    border: 0;
+    outline: 0;
+    border-radius: 5rem;
+    height: 100%;
+    width: 5rem;
+    background-color: $text-blue;
+    color: white;
+  }
 }
+
 @media (max-width: 480px) {
-    .input-container {
-        width: 90vw;
+  .input-container {
+    width: 90vw;
+  }
+
+  .confirm-button {
+    width: 5rem !important;
+    font-size: 17px;
+  }
+
+
+  .hint-container {
+    p {
+      font-size: 1.5rem;
     }
+  }
+}
 
-    .confirm-button {
-        width: 5rem !important;
-        font-size: 17px;
-    }
-
-
-
-    .hint-container {
-        p {
-            font-size: 1.5rem;
-        }
-    }
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
 }

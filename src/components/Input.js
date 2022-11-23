@@ -44,21 +44,26 @@ export default function KeyInput() {
     })
 
     return (
-        <div className="selector-container">
-            <div className="input-container">
-                <div className="keyword-container">
-                    <input className="keyword-input" onChange={onTextInput} defaultValue={keyWords} ref={inputRef}
-                           onKeyUp={onKeyUp}/>
-                    <button className="confirm-button" onClick={handleClick}>生成英雄</button>
-                </div>
-                {currentPick && (
-                    <div className="hint-container">
-                        <div className="backdrop"></div>
-                        <p>{currentPick}</p>
+        <div>
+            <div className="selector-container">
+                <div className="input-container">
+                    <div className="keyword-container">
+                        <input className="keyword-input" onChange={onTextInput} defaultValue={keyWords} ref={inputRef}
+                               onKeyUp={onKeyUp}/>
+                        <button className="confirm-button" onClick={handleClick}>生成英雄</button>
                     </div>
-                )}
-                <ResultTable data={pickHistories}/>
+                    {currentPick && (
+                        <div className="hint-container">
+                            <div className="backdrop"></div>
+                            <p>{currentPick}</p>
+                        </div>
+                    )}
+                    <ResultTable data={pickHistories}/>
+                </div>
             </div>
+            <footer>
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2021007948号</a>
+            </footer>
         </div>
     );
 }
