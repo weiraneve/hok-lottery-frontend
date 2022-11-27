@@ -1,0 +1,20 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### project ###
+/build
+/node_modules
+/.pnp
+.pnp.js
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

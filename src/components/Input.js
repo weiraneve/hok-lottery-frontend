@@ -2,7 +2,9 @@ import React, {useEffect, useState} from 'react';
 import '../styles/Input.scss';
 import ResultTable from "./ResultTable";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_IP = process.env.REACT_APP_IP;
+const BASE_PORT = process.env.REACT_APP_PORT;
+const BASE_URL = "http://" + BASE_IP + ":" +  BASE_PORT
 
 export default function KeyInput() {
     const [keyWords, setKeyWords] = useState("");
@@ -24,6 +26,7 @@ export default function KeyInput() {
     };
 
     const handleClick = () => {
+        console.log(BASE_URL)
         fetch(BASE_URL, options)
             .then(response => response.json())
             .then(response => {
