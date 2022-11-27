@@ -26,7 +26,6 @@ export default function KeyInput() {
     };
 
     const handleClick = () => {
-        console.log(BASE_URL)
         fetch(BASE_URL, options)
             .then(response => response.json())
             .then(response => {
