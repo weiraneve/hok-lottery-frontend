@@ -6,7 +6,6 @@ pipeline
     {
       steps {
          sh" docker-compose stop "
-         sh" docker image rm hok-front "
          sh" docker-compose up --build -d "
       }
     }
