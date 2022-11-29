@@ -2,10 +2,8 @@ FROM node:16
 
 WORKDIR /app
 
-COPY . /app
-ENV REACT_APP_IP=127.0.0.1
-RUN npm install
-RUN npm run build
+COPY ./build /app
+
 RUN npm install -g serve
 
 EXPOSE 3000

@@ -1,12 +1,21 @@
 pipeline
 {
   agent any
+
   stages {
+
+      stage('Build')
+      {
+        steps {
+          sh" npm install "
+          sh" npm run build "
+        }
+      }
+
       stage('Deploy')
-    {
+     {
       steps {
-         sh" docker-compose stop "
-         sh" docker-compose up --build -d "
+         sh" docker-compose up -d "
       }
     }
   }
