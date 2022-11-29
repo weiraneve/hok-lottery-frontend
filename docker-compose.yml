@@ -3,7 +3,7 @@ version: "3"
 services:
   front:
     build: ./
-    image: hok-front:1.0.1
+    image: hok-front:1.0.2
     ports:
       - "3000:3000"
     volumes:
