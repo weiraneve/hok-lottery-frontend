@@ -1,5 +1,5 @@
 # 前言
-`hok-lottery` 王者抽取冷门英雄组合网站前端
+[hok-lottery](https://github.com/weiran1999/hok-lottery) 王者抽取冷门英雄组合网站前端
 
 # 展示
 
