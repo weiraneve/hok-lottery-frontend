@@ -2,6 +2,7 @@
 - 本项目用于王者荣耀俱乐部进行冷门大作战比赛，抽取随机英雄组合池而进行设计的Web前端
 - [后端](https://github.com/weiran1999/hok-lottery)
 - [Android移动端](https://github.com/weiran1999/hok-lottery-android)
+- [ios移动端](https://github.com/weiran1999/hok-lottery-ios)
 
 # 展示
 
