@@ -4,7 +4,7 @@ import ResultTable from "./ResultTable";
 
 const BASE_IP = process.env.REACT_APP_IP;
 const BASE_PORT = process.env.REACT_APP_PORT;
-const BASE_URL = "http://" + BASE_IP + ":" +  BASE_PORT
+const BASE_URL = "http://" + BASE_IP + ":" + BASE_PORT
 
 export default function KeyInput() {
     const [keyWords, setKeyWords] = useState("");
@@ -32,7 +32,13 @@ export default function KeyInput() {
                 setCurrentPick(response.data)
                 setPickHistories(response.logs)
             })
-            .catch(err => console.error(err));
+            .catch(
+                err => {
+                    console.error(err)
+                    setCurrentPick(null);
+                    setPickHistories([]);
+                }
+            );
     }
 
     const onKeyUp = (event) => {
@@ -63,9 +69,6 @@ export default function KeyInput() {
                     <ResultTable data={pickHistories}/>
                 </div>
             </div>
-            <footer>
-                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2021007948号</a>
-            </footer>
         </div>
     );
 }
